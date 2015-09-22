@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'places/index'
+
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -9,11 +11,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sessions#new'
 
   get 'register' => 'users#new'
-  post 'register' => 'users#create'
-
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
