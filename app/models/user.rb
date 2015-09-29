@@ -1,13 +1,14 @@
 class User
   include Mongoid::Document
   include BCrypt
+  has_many :lists
 
   attr_accessor :password
 
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
-  field :password_hash, :type => String
+  field :password_hash, type: String
 
   before_save :encrypt_password
 

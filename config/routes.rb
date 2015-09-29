@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :lists
+  resources :places
   get 'places/index'
 
   get 'sessions/new'
