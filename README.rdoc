@@ -1,3 +1,13 @@
-== Savory
+= Savory
 
 Event: {Intro to Meteor.js}[http://www.meetup.com/BeginnerProgrammers/events/225055870]
+
+== Schema
+==== +User+ Model
+The user model has the attributes +first_name+, +last_name+, +email+, and +password_hash+ (the saved password hash after encryption). Users have many lists.
+
+=== +List+ Model
+The list model has the attributes +name+ and +description+. Lists belong to users and have many places, as they're used to group places to eat into different categories of the user's choice.
+
+=== +Place+ Model
+The place model has the attributes +name+, +location+, and +url+. Places belong to lists.
