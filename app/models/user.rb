@@ -10,6 +10,15 @@ class User
   field :email, type: String
   field :password_hash, type: String
 
+  validates_presence_of :first_name, :last_name, :email, :password
+  validates :email, :uniqueness => true
+  validates :password, :length => {
+    :minimum => 6,
+    :maximum => 20,
+    :too_short => "Passwords must be at least %{count} characters.",
+    :too_long => "Passwords mut be at most %{count} characters."
+  }
+
   before_save :encrypt_password
 
   def self.authenticate(email, password)
