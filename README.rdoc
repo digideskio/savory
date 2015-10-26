@@ -11,3 +11,6 @@ The list model has the attributes +name+ and +description+. Lists belong to user
 
 ==== +Place+ Model
 The place model has the attributes +name+, +location+, and +url+. Places belong to lists.
+
+==Final Project Pull Request
+Ruby on Rails, Fall 2015
