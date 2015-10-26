@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     if current_user
       return true
     end
-    redirect_to root_url
+    redirect_to "login"
   end
 
 end

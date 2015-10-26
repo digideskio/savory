@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_filter :require_user
+  protect_from_forgery with: :exception
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   # GET /lists
