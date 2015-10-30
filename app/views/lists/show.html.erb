@@ -1,3 +1,4 @@
+<div class="text-center">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -16,13 +17,11 @@
     <th>Location</th>
   </tr>
 
-  <% @list.places.build.each do |place| %>
+  <% @list.places.each do |place| %>
     <tr>
       <td><a href="<%= place.url =%>"><%= place.name %></a></td>
       <td><%= place.description %></td>
     </tr>
     <% end %>
 </table>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+</div>

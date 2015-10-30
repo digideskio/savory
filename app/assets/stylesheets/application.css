@@ -12,8 +12,45 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+body {
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+}
 
+textarea {
+  resize: none;
+}
+
+textarea:focus, input:focus{
+  outline: 0;
+}
+
+li, p, td {
+  font-family: 'Raleway';
+}
+
+a:hover {
+  background-color: transparent;
+}
+
+.field_with_errors {
+  display: inline-block;
+  float: none;
+}
+
+#error_explanation {
+  border: none;
+  display: inline-block;
+  float: none;
+}
+
+@-webkit-keyframes fontfix {
+  from { opacity: 1; }
+  to   { opacity: 1; }
+}
