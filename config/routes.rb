@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   get 'register' => 'users#new'
+  get 'edit' => 'users#edit'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'

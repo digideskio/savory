@@ -7,17 +7,15 @@
     <tr>
       <th>Name</th>
       <th>Location</th>
-      <th>Url</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><%= place.name %></td>
+        <td><a href="<%= place.url =%>"><%= place.name %></a></td>
         <td><%= place.location %></td>
-        <td><%= place.url %></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Show', place %></button></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
