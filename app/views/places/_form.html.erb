@@ -23,6 +23,10 @@
     <%= f.label :url %><br>
     <%= f.text_field :url %>
   </div>
+  <div class="field">
+    List<br>
+    <%= f.collection_select(:list_id, @lists, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, only: [:new, :edit, :update, :destroy]
   protect_from_forgery with: :exception
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
