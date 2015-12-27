@@ -7,5 +7,4 @@ class Place
   field :url, type: String
 
   validates_presence_of :name, :location
-  validates :location, :uniqueness => true
 end

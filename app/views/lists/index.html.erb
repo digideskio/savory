@@ -3,6 +3,10 @@
 
 <h1>Lists</h1>
 
+<% if @lists.length == 0 %>
+  <br><p>Whoops! You don't have any lists yet. Start creating them now!</p>
+<% end %>
+
 <% @lists.each do |list| %>
   <h3><%= link_to list.name, list %></h3>
   <% if list.description.length > 0 %>

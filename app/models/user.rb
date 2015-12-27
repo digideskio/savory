@@ -7,6 +7,7 @@ class User
   field :last_name, type: String
   field :email, type: String
   field :password_digest, type: String
+  field :photo_url, type: String
 
   has_secure_password
   validates_presence_of :first_name, :last_name, :email, :password
@@ -14,7 +15,7 @@ class User
   validates :password, :length => {
     :minimum => 6,
     :maximum => 20,
-    :too_short => "Passwords must be at least %{count} characters.",
-    :too_long => "Passwords must be at most %{count} characters."
+    :too_short => "must be at least %{count} characters",
+    :too_long => "must be at most %{count} characters"
   }
 end

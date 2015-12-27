@@ -2,28 +2,32 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @list.name %></h1><br>
-<p><%= @list.description %></p><br>
-<%= link_to "Share", :controller => "lists", :action => "share", :id => @list.id %>
+<p><%= @list.description %></p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th class="text-center">Name</th>
-      <th class="text-center">Location</th>
-    </tr>
-  </thead>
+<% if @list.places.length > 0 %>
+  <%= link_to "Share", :controller => "lists", :action => "share", :id => @list.id %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Name</th>
+        <th class="text-center">Location</th>
+      </tr>
+    </thead>
 
-  <% @list.places.each do |place| %>
-    <tr>
-      <td>
-        <% if place.url.length > 0 %>
-          <a href="<%= place.url =%>"><%= place.name %></a>
-        <% else %>
-          <%= place.name %>
-        <% end %>
-      </td>
-      <td><%= place.location %></td>
-    </tr>
-    <% end %>
-</table>
+    <% @list.places.each do |place| %>
+      <tr>
+        <td>
+          <% if place.url.length > 0 %>
+            <a href="<%= place.url =%>"><%= place.name %></a>
+          <% else %>
+            <%= place.name %>
+          <% end %>
+        </td>
+        <td><%= place.location %></td>
+      </tr>
+      <% end %>
+  </table>
+<% else %>
+  <p>Add to this list by creating a new place!</p>
+<% end %>
 </div>
