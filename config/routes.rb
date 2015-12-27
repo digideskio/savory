@@ -1,26 +1,28 @@
 Rails.application.routes.draw do
   resources :lists
   resources :places
+  resources :users
+
   get 'places/index'
 
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
 
-  resources :users
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'lists#index'
+  get :share, to: 'lists#share', as: :share
+
+  get 'places' => 'places#index'
 
   get 'register' => 'users#new'
-  get 'edit' => 'users#edit'
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
-  get 'places' => 'places#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

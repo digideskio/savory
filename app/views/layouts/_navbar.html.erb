@@ -1,15 +1,21 @@
 <header class="navbar navbar-default">
-<div class="navbar-class">
-  <div class="container">
-    <ul class="nav navbar-nav">
-    <li><a href="/">SAVORY</a></li>
-    <% if @current_user %>
-        <li><a href="/edit">Edit Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
-    <% else %>
-        <li><a href="/register">Register</a></li>
-    <% end %>
-    </ul>
+  <div class="navbar-class">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="/">SAVORY</a></li>
+        <% if @current_user %>
+          <li><%= link_to 'New List', new_list_path %></li>
+          <li><%= link_to 'New Place', new_place_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if @current_user %>
+          <li><%= link_to 'Edit Profile', :controller => 'users', :action => "show", :id => @current_user.id %></a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>
+          <li><a href="/register">Register</a></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
 </header>

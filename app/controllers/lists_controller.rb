@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_user, :only => [:show]
+  before_action :set_list, only: [:show, :share, :edit, :update, :destroy]
+  skip_before_filter :require_user, :only => [:share]
 
   # GET /lists
   # GET /lists.json
@@ -11,6 +11,10 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+  end
+
+  def share
+    @list = List.find(params[:id])
   end
 
   # GET /lists/new
