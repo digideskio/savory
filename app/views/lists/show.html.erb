@@ -14,8 +14,14 @@
 
   <% @list.places.each do |place| %>
     <tr>
-      <td><a href="<%= place.url =%>"><%= place.name %></a></td>
-      <td><%= place.description %></td>
+      <td>
+        <% if place.url.length > 0 %>
+          <a href="<%= place.url =%>"><%= place.name %></a>
+        <% else %>
+          <%= place.name %>
+        <% end %>
+      </td>
+      <td><%= place.location %></td>
     </tr>
     <% end %>
 </table>

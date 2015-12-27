@@ -15,7 +15,13 @@
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><a href="<%= place.url =%>"><%= place.name %></a></td>
+        <td>
+          <% if place.url.length > 0 %>
+            <a href="<%= place.url =%>"><%= place.name %></a>
+          <% else %>
+            <%= place.name %>
+          <% end %>
+        </td>
         <td><%= place.location %></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Show', place %></button></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>

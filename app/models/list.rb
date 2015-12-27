@@ -6,5 +6,5 @@ class List
   field :name, type: String
   field :description, type: String
 
-  validates_presence_of :name, :description
+  validates_presence_of :name
 end

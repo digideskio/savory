@@ -22,6 +22,10 @@
     <%= f.label :url, "URL" %><br>
     <%= f.text_field :url %>
   </div>
+  <div class="field">
+    <%= f.label :list, "List" %><br>
+    <%= collection_select(:list_id, :id, @current_user.lists, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-success" %>
   </div>
