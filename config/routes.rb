@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'lists#index'
+  root 'lists#home'
+  get 'lists' => 'lists#index'
   get :share, to: 'lists#share', as: :share
 
   get 'places' => 'places#index'

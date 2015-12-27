@@ -2,6 +2,10 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :share, :edit, :update, :destroy]
   skip_before_filter :require_user, :only => [:share]
 
+  def home
+    render :home
+  end
+
   # GET /lists
   # GET /lists.json
   def index
@@ -34,8 +38,8 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to root_url, notice: 'List was successfully created.' }
-        format.json { render root_path, status: :created, location: @list }
+        format.html { redirect_to lists_url, notice: 'List was successfully created.' }
+        format.json { render lists_path, status: :created, location: @list }
       else
         format.html { render :new }
         format.json { render json: @list.errors, status: :unprocessable_entity }

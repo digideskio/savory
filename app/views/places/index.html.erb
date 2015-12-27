@@ -3,36 +3,38 @@
 
 <h1>Places</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th class="text-center">Name</th>
-      <th class="text-center">Location</th>
-      <th class="text-center">List</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
+<% if @current_user.places.length > 0 %>
+  <table class="table">
+    <thead>
       <tr>
-        <td>
-          <% if place.url.length > 0 %>
-            <a href="<%= place.url =%>"><%= place.name %></a>
-          <% else %>
-            <%= place.name %>
-          <% end %>
-        </td>
-        <td><%= place.location %></td>
-        <td><%= link_to place.list.name, place.list %></td>
-        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
-        <td><button type="button" class="btn btn-default"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <th class="text-center">Name</th>
+        <th class="text-center">Location</th>
+        <th class="text-center">List</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @places.each do |place| %>
+        <tr>
+          <td>
+            <% if place.url.length > 0 %>
+              <a href="<%= place.url =%>"><%= place.name %></a>
+            <% else %>
+              <%= place.name %>
+            <% end %>
+          </td>
+          <td><%= place.location %></td>
+          <td><%= link_to place.list.name, place.list %></td>
+          <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
+          <td><button type="button" class="btn btn-default"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <br><p>You don't have any places yet. Start creating them now!</p>
+<% end %>
 
 <br>
-
-<%= link_to 'New Place', new_place_path %>
 </div>

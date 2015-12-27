@@ -1,7 +1,11 @@
 <div class="text-center">
 <h1>New Place</h1>
 
-<%= render 'form' %>
+<% if @current_user.lists.length > 0 %>
+    <%= render 'form' %>
+<% else %>
+    <br><p>Make sure you have at least one list created before you start adding places!</p>
+<% end %>
 
 <%= link_to 'Back', places_path %>
 </div>

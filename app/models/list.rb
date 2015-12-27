@@ -1,6 +1,6 @@
 class List
   include Mongoid::Document
-  has_many :places
+  has_many :places, dependent: :destroy
   belongs_to :user
 
   field :name, type: String
