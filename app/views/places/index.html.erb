@@ -8,6 +8,7 @@
     <tr>
       <th class="text-center">Name</th>
       <th class="text-center">Location</th>
+      <th class="text-center">List</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -23,9 +24,9 @@
           <% end %>
         </td>
         <td><%= place.location %></td>
-        <td><button type="button" class="btn btn-default"><%= link_to 'Show', place %></button></td>
+        <td><%= link_to place.list.name, place.list %></td>
         <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
-        <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

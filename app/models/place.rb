@@ -1,6 +1,7 @@
 class Place
   include Mongoid::Document
   belongs_to :list
+  belongs_to :user
   
   field :name, type: String
   field :location, type: String

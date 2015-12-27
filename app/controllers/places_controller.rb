@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    @places = @current_user.places
   end
 
   # GET /places/1
@@ -27,6 +27,7 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
     @list = List.find(params[:list_id][:id])
     @list.places << @place
+    @current_user.places << @place
 
     respond_to do |format|
       if @place.save
