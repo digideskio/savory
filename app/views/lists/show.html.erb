@@ -15,6 +15,7 @@
       <tr>
         <th class="text-center">Name</th>
         <th class="text-center">Location</th>
+        <th colspan="2"></th>
       </tr>
     </thead>
 
@@ -28,6 +29,8 @@
           <% end %>
         </td>
         <td><%= place.location %></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
       <% end %>
   </table>

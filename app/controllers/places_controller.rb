@@ -24,6 +24,10 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
+    if (place_params[:url][0..6] != "http://" and
+      place_params[:url][0..7] != "https://")
+      place_params[:url].insert(0, "http://")
+    end
     @place = Place.new(place_params)
     @list = List.find(params[:list_id][:id])
     @list.places << @place

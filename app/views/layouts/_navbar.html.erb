@@ -5,7 +5,6 @@
         <li><a href="/">SAVORY</a></li>
         <% if @current_user %>
           <li><a href="/lists">Lists</a></li>
-          <li><a href="/places">Places</a></li>
           <li><%= link_to 'New List', new_list_path %></li>
           <li><%= link_to 'New Place', new_place_path %></li>
         <% end %>

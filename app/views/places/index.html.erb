@@ -19,11 +19,7 @@
         <tr>
           <td>
             <% if place.url.length > 0 %>
-              <% if place.url[0..6] == "http://" or place.url[0..7] == "https://" %>
-                <a target="_blank" href="<%= place.url =%>"><%= place.name %></a>
-              <% else %>
-                <a target="_blank" href="http://<%= place.url =%>"><%= place.name %></a>
-              <% end %>
+              <a target="_blank" href="<%= place.url =%>"><%= place.name %></a>
             <% else %>
               <%= place.name %>
             <% end %>
