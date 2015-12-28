@@ -8,13 +8,10 @@
 <% end %>
 
 <% @lists.each do |list| %>
-  <h3><%= link_to list.name, list %></h3>
+  <h3><%= link_to list.name, list %> <%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, list, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
   <% if list.description.length > 0 %>
     <%= list.description %><br>
   <% end %><br>
-  <button type="button" class="btn btn-default btn-sm"><%= link_to 'Edit', edit_list_path(list) %></button>
-  <button type="button" class="btn btn-default btn-sm"><%= link_to 'Delete', list, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-  <br><br>
 <% end %>
 
 </div>

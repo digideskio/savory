@@ -4,13 +4,13 @@ Event: {Intro to Meteor.js}[http://www.meetup.com/BeginnerProgrammers/events/225
 
 == Schema
 ==== +User+ Model
-The user model has the attributes +first_name+, +last_name+, +email+, and +password_hash+ (the saved password hash after encryption). Users have many lists.
+The user model has the attributes +first_name+, +last_name+, +email+, and +password_hash+ (the saved password hash after encryption). Users have many lists and many places.
 
 ==== +List+ Model
-The list model has the attributes +name+ and +description+. Lists belong to users and have many places, as they're used to group places to eat into different categories of the user's choice.
+The list model has the attributes +name+ and +description+. Lists belong to users and have many places, as they're used to group places to eat into different categories of the user's choice. Once the user to which a list belongs is destroyed, it is destroyed as well.
 
 ==== +Place+ Model
-The place model has the attributes +name+, +location+, and +url+. Places belong to lists.
+The place model has the attributes +name+, +location+, and +url+. Places belong to users and lists. Once the user and/or list to which a place belongs is destroyed, it is destroyed as well.
 
 ==Final Project Pull Request
 Ruby on Rails, Fall 2015

@@ -41,21 +41,29 @@ h1 {
   padding-top: 40px;
 }
 
+h1 i {
+  font-size: 20px !important;
+}
+
+h3 i {
+  font-size: 15px !important;
+}
+
 li, p, th, td {
   font-family: 'Raleway';
 }
 
+i {
+  color: black;
+}
+
 a:hover {
   background-color: transparent;
+  text-decoration: none !important;
 }
 
 .navbar {
   border-radius: 0 !important;
-}
-
-.field_with_errors {
-  display: inline-block;
-  float: none;
 }
 
 .home-wrapper img {
@@ -75,6 +83,11 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.field_with_errors {
+  display: inline-block;
+  float: none;
 }
 
 #error_explanation {
