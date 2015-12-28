@@ -17,10 +17,10 @@
       <% else %>
         <%= place.name %>
       <% end %>
+      <%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_place_path(place) %>
+      <%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, place, method: :delete, data: { confirm: 'Are you sure?' } %>
     </h3>
     <p><%= place.location %></p>
-    <button type="button" class="btn btn-default btn-xs"><%= link_to 'Edit', edit_place_path(place) %></button>
-    <button type="button" class="btn btn-default btn-xs"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button>
   <% end %>
 <% else %>
   <p>Add to this list by creating a new place!</p>

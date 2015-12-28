@@ -3,5 +3,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', places_path %>
+<%= link_to 'Back', :controller => "lists", :action => "show", :id => @place.list.id %>
 </div>
