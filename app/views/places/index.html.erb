@@ -28,8 +28,8 @@
             </td>
             <td><%= place.location %></td>
             <td><%= link_to place.list.name, place.list %></td>
-            <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_place_path(place) %></button></td>
-            <td><button type="button" class="btn btn-default"><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+            <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_place_path(place) %></td>
+            <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

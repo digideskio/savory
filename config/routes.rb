@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   resources :places
   resources :users
 
-  get 'places/index'
-
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'

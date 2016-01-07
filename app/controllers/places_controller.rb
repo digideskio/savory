@@ -1,15 +1,10 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:edit, :update, :destroy]
 
   # GET /places
   # GET /places.json
   def index
     @places = @current_user.places
-  end
-
-  # GET /places/1
-  # GET /places/1.json
-  def show
   end
 
   # GET /places/new
@@ -47,9 +42,15 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
+    if (place_params[:url].length > 0 and
+      place_params[:url][0..6] != "http://" and
+      place_params[:url][0..7] != "https://")
+      place_params[:url].insert(0, "http://")
+    end
+
     if @place.update(place_params)
       flash[:success] = 'Place was successfully updated.'
-      redirect_to @list
+      redirect_to lists_url
     else
       flash[:danger] = 'Whoops, that didn\'t work!'
       render 'edit'
