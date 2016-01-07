@@ -9,7 +9,7 @@
   <% @list.places.each do |place| %>
     <h3>
       <% if place.url.length > 0 %>
-        <a href="<%= place.url =%>"><%= place.name %></a>
+        <a href="<%= place.url =%>"  target="_blank"><%= place.name %></a>
       <% else %>
         <%= place.name %>
       <% end %>
