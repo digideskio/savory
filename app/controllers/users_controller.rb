@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   skip_before_filter :require_user, :only => [:create, :new]
-
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
 
   # GET /users/new
   def new
@@ -35,7 +30,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = 'User was successfully updated.'
-      redirect_to @user
+      redirect_to root_url
     else
       flash[:danger] = 'Whoops, that didn\'t work!'
       render 'edit'

@@ -1,6 +1,7 @@
 <div class="text-center">
-
-  <img src="<%= @list.user.photo_url %>" style="max-height: 150px; margin-bottom: -40px;">
+  <% if @list.user.photo_url.length > 0 %>
+    <img src="<%= @list.user.photo_url %>" style="max-height: 150px; margin-bottom: -40px;">
+  <% end %>
 
   <h1><%= @list.name %></h1>
   <h6>By <%= @list.user.first_name %> <%= @list.user.last_name %></h6>
