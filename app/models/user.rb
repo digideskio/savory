@@ -11,7 +11,7 @@ class User
   field :photo_url, type: String
 
   has_secure_password
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name, :email
   validates :email, :uniqueness => true
   validates :password, :length => {
     :minimum => 6,

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to lists_url
     else
-      flash[:error] = "Login failed."
+      flash[:danger] = "Login failed."
       render "new"
     end  
   end

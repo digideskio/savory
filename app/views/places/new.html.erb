@@ -1,11 +1,14 @@
 <div class="text-center">
-<h1>New Place</h1>
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+  <h1>New Place</h1>
 
-<% if @current_user.lists.length > 0 %>
-    <%= render 'form' %>
-<% else %>
-    <br><p>Make sure you have at least one list created before you start adding places!</p>
-<% end %>
+  <% if @current_user.lists.length > 0 %>
+      <%= render 'form' %>
+  <% else %>
+      <br><p>Make sure you have at least one list created before you start adding places!</p>
+  <% end %>
 
-<%= link_to 'Back', places_path %>
+  <%= link_to 'Back', places_path %>
 </div>

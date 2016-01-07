@@ -1,7 +1,7 @@
 <%= form_for(@place) do |f| %>
   <% if @place.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+      <h2><%= pluralize(@place.errors.count, "error") %>:</h2>
       <ul>
       <% @place.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,13 +13,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <%= f.label :name %><br>
+        <%= f.label :name, "Name*" %><br>
         <%= f.text_field :name, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <%= f.label :location %><br>
+        <%= f.label :location, "Location*" %><br>
         <%= f.text_field :location, {class: "form-control"} %>
       </div>
     </div><br>
@@ -31,7 +31,7 @@
     </div><br>
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <%= f.label :list, "List" %><br>
+        <%= f.label :list, "List*" %><br>
         <%= collection_select :list_id, :id, @current_user.lists, :id, :name, {:prompt => @select_value, :selected => @place.list_id}, {class: "form-control"} %>
       </div>
     </div><br>

@@ -36,28 +36,24 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @current_user.lists << @list
 
-    respond_to do |format|
-      if @list.save
-        format.html { redirect_to lists_url, notice: 'List was successfully created.' }
-        format.json { render lists_path, status: :created, location: @list }
-      else
-        format.html { render :new }
-        format.json { render json: @list.errors, status: :unprocessable_entity }
-      end
+    if @list.save
+      flash[:success] = 'List was successfully created.'
+      redirect_to lists_url
+    else
+      flash[:danger] = 'Whoops, that didn\'t work!'
+      render 'new'
     end
   end
 
   # PATCH/PUT /lists/1
   # PATCH/PUT /lists/1.json
   def update
-    respond_to do |format|
-      if @list.update(list_params)
-        format.html { redirect_to @list, notice: 'List was successfully updated.' }
-        format.json { render :show, status: :ok, location: @list }
-      else
-        format.html { render :edit }
-        format.json { render json: @list.errors, status: :unprocessable_entity }
-      end
+    if @list.update(list_params)
+      flash[:success] = 'List was successfully updated.'
+      redirect_to @list
+    else
+      flash[:danger] = 'Whoops, that didn\'t work!'
+      render 'edit'
     end
   end
 
@@ -65,10 +61,8 @@ class ListsController < ApplicationController
   # DELETE /lists/1.json
   def destroy
     @list.destroy
-    respond_to do |format|
-      format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'List was successfully deleted.'
+    redirect_to lists_url
   end
 
   private

@@ -29,33 +29,30 @@ class PlacesController < ApplicationController
       place_params[:url][0..7] != "https://")
       place_params[:url].insert(0, "http://")
     end
+
     @place = Place.new(place_params)
     @list = List.find(params[:list_id][:id])
     @list.places << @place
     @current_user.places << @place
 
-    respond_to do |format|
-      if @place.save
-        format.html { redirect_to @list, notice: 'Place was successfully created.' }
-        format.json { render "lists/show", status: :created, location: @place }
-      else
-        format.html { render :new }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.save
+      flash[:success] = 'Place was successfully created.'
+      redirect_to @list
+    else
+      flash[:danger] = 'Whoops, that didn\'t work!'
+      render 'new'
     end
   end
 
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
-    respond_to do |format|
-      if @place.update(place_params)
-        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
-        format.json { render :show, status: :ok, location: @place }
-      else
-        format.html { render :edit }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.update(place_params)
+      flash[:success] = 'Place was successfully updated.'
+      redirect_to @list
+    else
+      flash[:danger] = 'Whoops, that didn\'t work!'
+      render 'edit'
     end
   end
 
@@ -64,10 +61,8 @@ class PlacesController < ApplicationController
   def destroy
     @list = @place.list
     @place.destroy
-    respond_to do |format|
-      format.html { redirect_to @list, notice: 'Place was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Place was successfully deleted.'
+    redirect_to @list
   end
 
   private

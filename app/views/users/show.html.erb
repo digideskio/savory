@@ -1,8 +1,10 @@
 <div class="text-center">
-<p id="notice"><%= notice %></p>
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
 
 <% if @user.photo_url %>
-    <img src="<%= @user.photo_url %>" style="max-height: 250px;">
+  <img src="<%= @user.photo_url %>" style="max-height: 250px;">
 <% end %>
 
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>

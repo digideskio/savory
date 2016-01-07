@@ -1,7 +1,10 @@
 <div class="text-center">
-<h1>Edit List</h1>
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+  <h1>Edit List</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', lists_path %>
+  <%= link_to 'Back', lists_path %>
 </div>

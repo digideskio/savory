@@ -1,12 +1,12 @@
 <div class="text-center">
 
-<img src="<%= @list.user.photo_url %>" style="max-height: 150px; margin-bottom: -40px;">
+  <img src="<%= @list.user.photo_url %>" style="max-height: 150px; margin-bottom: -40px;">
 
-<h1><%= @list.name %></h1>
-<h6>By <%= @list.user.first_name %> <%= @list.user.last_name %></h6>
-<p><%= @list.description %></p><br>
+  <h1><%= @list.name %></h1>
+  <h6>By <%= @list.user.first_name %> <%= @list.user.last_name %></h6>
+  <p><%= @list.description %></p><br>
 
-<% @list.places.each do |place| %>
+  <% @list.places.each do |place| %>
     <h3>
       <% if place.url.length > 0 %>
         <a href="<%= place.url =%>"><%= place.name %></a>

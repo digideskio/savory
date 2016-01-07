@@ -1,7 +1,10 @@
 <div class="text-center">
-<h1>Edit Place</h1>
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+  <h1>Edit Place</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', :controller => "lists", :action => "show", :id => @place.list.id %>
+  <%= link_to 'Back', :controller => "lists", :action => "show", :id => @place.list.id %>
 </div>
