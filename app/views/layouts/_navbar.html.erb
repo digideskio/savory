@@ -2,7 +2,7 @@
   <div class="navbar-class">
     <div class="container">
       <ul class="nav navbar-nav">
-        <li><a href="/">SAVORY</a></li>
+        <li><a href="/" class="pull-left"><%= image_tag("logo.png") %></a></li>
         <% if @current_user %>
           <li><a href="/lists">Lists</a></li>
           <li><%= link_to 'New List', new_list_path %></li>
