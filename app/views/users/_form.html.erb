@@ -13,33 +13,48 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-2 col-md-offset-4">
         <%= f.label :first_name, "First Name*" %><br>
         <%= f.text_field :first_name, {class: "form-control"} %>
       </div>
-    </div><br>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-2">
         <%= f.label :last_name, "Last Name*" %><br>
         <%= f.text_field :last_name, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-2 col-md-offset-4">
         <%= f.label :email, "Email*" %><br>
         <%= f.text_field :email, {class: "form-control"} %>
       </div>
-    </div><br>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-2">
         <%= f.label :password, "Password*" %><br>
         <%= f.password_field :password, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-4 col-md-offset-4">
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
         <%= f.label :photo_url, "Photo URL" %><br>
         <%= f.text_field :photo_url, {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :website, "Website URL" %><br>
+        <%= f.text_field :website, {class: "form-control"} %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-4">
+        <%= f.label :facebook, "Facebook URL" %><br>
+        <%= f.text_field :facebook, {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+        <%= f.label :twitter, "Twitter URL" %><br>
+        <%= f.text_field :twitter, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="actions">

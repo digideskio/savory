@@ -9,6 +9,9 @@ class User
   field :email, type: String
   field :password_digest, type: String
   field :photo_url, type: String
+  field :facebook, type: String
+  field :twitter, type: String
+  field :website, type: String
 
   has_secure_password
   validates_presence_of :first_name, :last_name, :email

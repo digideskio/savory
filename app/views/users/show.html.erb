@@ -1,18 +1,28 @@
-<div class="text-center">
-  <% flash.each do |key, value| %>
-    <p class="alert alert-<%= key %>"><%= value %></p>
+<div class="user-profile">
+  <div class="text-center">
+    <% flash.each do |key, value| %>
+      <p class="alert alert-<%= key %>"><%= value %></p>
+    <% end %>
+
+  <% if @user.photo_url %>
+    <img src="<%= @user.photo_url %>" style="max-height: 250px;">
   <% end %>
 
-<% if @user.photo_url %>
-  <img src="<%= @user.photo_url %>" style="max-height: 250px;">
-<% end %>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p><br>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p><br>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
+  <% if @user.website.length > 0 %>
+    <%= link_to "<i class=\"fa fa-external-link-square fa-2x\"></i>".html_safe, @user.website %>
+  <% end %>
+  <% if @user.facebook.length > 0 %>
+    <%= link_to "<i class=\"fa fa-facebook fa-2x\"></i>".html_safe, @user.facebook %>
+  <% end %>
+  <% if @user.twitter.length > 0 %>
+    <%= link_to "<i class=\"fa fa-twitter fa-2x\"></i>".html_safe, @user.twitter %>
+  <% end %>
+  </div>
 </div>

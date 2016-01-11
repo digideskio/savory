@@ -106,10 +106,14 @@ a:active {
 }
 
 .home-wrapper-text {
-    padding-top: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile i {
+  padding: 10px;
 }
 
 .field_with_errors {

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_user, :only => [:create, :new]
+  skip_before_filter :require_user, :only => [:create, :new, :show]
 
   # GET /users/new
   def new
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = 'User was successfully updated.'
-      redirect_to @user
+      redirect_to root_url
     else
       flash[:danger] = 'Whoops, that didn\'t work!'
       render 'edit'
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :photo_url)
+      params.require(:user).permit(:first_name, :last_name, :email, :password,
+                                   :photo_url, :facebook, :twitter, :website)
     end
 end

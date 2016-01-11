@@ -4,7 +4,7 @@
   <% end %>
 
   <h1><%= @list.name %></h1>
-  <h6>By <%= @list.user.first_name %> <%= @list.user.last_name %></h6>
+  <h6>By <%= link_to @list.user.first_name + " " + @list.user.last_name, @list.user %></h6>
   <p><%= @list.description %></p><br>
 
   <% @list.places.each do |place| %>
