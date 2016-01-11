@@ -8,8 +8,8 @@
     <% if @list.places.length > 0 %>
       <%= link_to "<i class=\"fa fa-link\"></i>".html_safe, :controller => "lists", :action => "share", :id => @list.id %>
     <% end %>
-  </h1><br>
-  <p><%= @list.description %></p>
+  </h1>
+  <p><%= @list.description %></p><br>
 
   <% if @list.places.length > 0 %>
     <% @list.places.each do |place| %>

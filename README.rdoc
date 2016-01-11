@@ -2,6 +2,10 @@
 
 Event: {Intro to Meteor.js}[http://www.meetup.com/BeginnerProgrammers/events/225055870]
 
+== Features
+-Personal social media links
+-Twitter Bootstrap
+
 == Schema
 ==== +User+ Model
 The user model has the attributes +first_name+, +last_name+, +email+, and +password_hash+ (the saved password hash after encryption). Users have many lists and many places.
