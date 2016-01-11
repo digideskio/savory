@@ -19,6 +19,22 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    if (user_params[:website].length > 0 and
+      user_params[:website][0..6] != "http://" and
+      user_params[:website][0..7] != "https://")
+      user_params[:website].insert(0, "http://")
+    end
+    if (user_params[:facebook].length > 0 and
+      user_params[:facebook][0..6] != "http://" and
+      user_params[:facebook][0..7] != "https://")
+      user_params[:facebook].insert(0, "http://")
+    end
+    if (user_params[:twitter].length > 0 and
+      user_params[:twitter][0..6] != "http://" and
+      user_params[:twitter][0..7] != "https://")
+      user_params[:twitter].insert(0, "http://")
+    end
+
     @user = User.new(user_params)
 
     if @user.save
@@ -33,6 +49,22 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if (user_params[:website].length > 0 and
+      user_params[:website][0..6] != "http://" and
+      user_params[:website][0..7] != "https://")
+      user_params[:website].insert(0, "http://")
+    end
+    if (user_params[:facebook].length > 0 and
+      user_params[:facebook][0..6] != "http://" and
+      user_params[:facebook][0..7] != "https://")
+      user_params[:facebook].insert(0, "http://")
+    end
+    if (user_params[:twitter].length > 0 and
+      user_params[:twitter][0..6] != "http://" and
+      user_params[:twitter][0..7] != "https://")
+      user_params[:twitter].insert(0, "http://")
+    end
+
     if @user.update(user_params)
       flash[:success] = 'User was successfully updated.'
       redirect_to root_url

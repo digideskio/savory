@@ -15,13 +15,13 @@
     <%= @user.email %>
   </p><br>
 
-  <% if @user.website.length > 0 %>
+  <% if @user.website and @user.website.length > 0 %>
     <%= link_to "<i class=\"fa fa-external-link-square fa-2x\"></i>".html_safe, @user.website %>
   <% end %>
-  <% if @user.facebook.length > 0 %>
+  <% if @user.facebook and @user.facebook.length > 0 %>
     <%= link_to "<i class=\"fa fa-facebook fa-2x\"></i>".html_safe, @user.facebook %>
   <% end %>
-  <% if @user.twitter.length > 0 %>
+  <% if @user.twitter and @user.twitter.length > 0 %>
     <%= link_to "<i class=\"fa fa-twitter fa-2x\"></i>".html_safe, @user.twitter %>
   <% end %>
   </div>
