@@ -3,8 +3,8 @@
 Event: {Intro to Meteor.js}[http://www.meetup.com/BeginnerProgrammers/events/225055870]
 
 == Features
--Personal social media links
--Twitter Bootstrap
+<li>Personal social media links</li>
+<li>Twitter Bootstrap</li>
 
 == Schema
 ==== +User+ Model
