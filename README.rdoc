@@ -3,8 +3,9 @@
 Event: {Intro to Meteor.js}[http://www.meetup.com/BeginnerProgrammers/events/225055870]
 
 == Features
-- Personal social media links
-- Twitter Bootstrap
+- Users can change their password via password resets on the login view
+- Profiles for users can include personal links (website, Facebook, Twitter)
+- Styling for Savory uses Twitter Bootstrap for improved UI
 
 == Schema
 ==== +User+ Model
