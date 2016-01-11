@@ -13,3 +13,5 @@
 /tmp
 
 DOHMH_New_York_City_Restaurant_Inspection_Results_Long.csv
+# Ignore application configuration
+/config/application.yml

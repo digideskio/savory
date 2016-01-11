@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   resources :lists
   resources :places
   resources :users
+  resources :password_resets
 
   get 'sessions/new'
   get 'sessions/create'
